@@ -14,9 +14,10 @@ Plugin.registerSourceHandler("next.js", function (compileStep) {
     throw new Error(output.errors.join(os.EOL));
   }
 
+  var newPath = compileStep.inputPath.replace(/\.next\.js$/, '.now.js');
   compileStep.addJavaScript({
     sourcePath: compileStep.inputPath,
-    path: compileStep.inputPath,
+    path: newPath;
     data: output.js,
     sourceMap: output.sourceMap
   });
