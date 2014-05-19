@@ -1,6 +1,6 @@
 Package.describe({
   summary: "JavaScript.next-to-JavaScript-of-today compiler",
-  version: "0.0.41"
+  version: "0.0.42"
 });
 
 Package._transitional_registerBuildPlugin({
@@ -9,7 +9,7 @@ Package._transitional_registerBuildPlugin({
   sources: [
     "plugin/compiler.js"
   ],
-  npmDependencies: {"traceur": "0.0.41"}
+  npmDependencies: {"traceur": "0.0.42"}
 });
 
 Package.on_use(function(api, where) {
