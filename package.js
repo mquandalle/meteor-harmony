@@ -7,7 +7,7 @@ Package._transitional_registerBuildPlugin({
   name: "harmony-compiler",
   use: [],
   sources: [
-    "plugin/compiler.js"
+    "plugin/compile-harmony.js"
   ],
   npmDependencies: {"traceur": "0.0.42"}
 });
