@@ -6,7 +6,7 @@ Package.describe({
 });
 
 Package._transitional_registerBuildPlugin({
-  name: "harmony-compiler",
+  name: "compileHarmony",
   use: [],
   sources: [
     "plugin/compile-harmony.js"
