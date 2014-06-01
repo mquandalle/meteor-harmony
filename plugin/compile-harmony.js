@@ -12,9 +12,9 @@ Plugin.registerSourceHandler("next.js", function (compileStep) {
 
   var output = traceur.compile(source, options);
 
-      // errors are split into four parts
   if (output.errors.length) {
     output.errors.forEach(function (err) {
+      // errors are split into four parts
       var errorParts = err.split(/: */);
       var SOURCEPATH = 0;
       var LINE = 1;
