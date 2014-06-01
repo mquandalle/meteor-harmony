@@ -33,7 +33,7 @@ Plugin.registerSourceHandler("next.js", function (compileStep) {
     compileStep.addJavaScript({
       sourcePath: oldPath,
       path: newPath,
-      data: output.js,
+      data: output.js.replace('"use strict";', ''),
       sourceMap: output.sourceMap
     });
   }
