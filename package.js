@@ -1,6 +1,5 @@
 Package.describe({
-  summary: "JavaScript.next-to-JavaScript-of-today compiler",
-  version: "0.0.42"
+  summary: "JavaScript.next-to-JavaScript-of-today compiler"
 });
 
 Package._transitional_registerBuildPlugin({
