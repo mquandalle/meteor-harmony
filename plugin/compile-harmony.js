@@ -25,8 +25,8 @@ Plugin.registerSourceHandler("next.js", function (compileStep) {
       compileStep.error({
         message: errorParts[MESSAGE],
         sourcePath: errorParts[SOURCEPATH],
-        line: parseInt(errorParts[LINE], 10) - 1,
-        column: parseInt(errorParts[COLUMN], 10) + 1
+        line: errorParts[LINE],
+        column: errorParts[COLUMN]
       });
     });
   } else {
