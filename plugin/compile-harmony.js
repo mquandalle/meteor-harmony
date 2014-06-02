@@ -30,10 +30,16 @@ Plugin.registerSourceHandler("next.js", function (compileStep) {
       });
     });
   } else {
+    var code = output.js;
+    // if traceur injects module.exports, rename it
+    if (code.indexOf('module.exports') === 0) {
+      code = code.replace('module.exports', 'harmony');
+    }
+
     compileStep.addJavaScript({
       sourcePath: oldPath,
       path: newPath,
-      data: output.js,
+      data: code,
       sourceMap: output.sourceMap
     });
   }

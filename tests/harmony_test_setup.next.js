@@ -1,1 +1,1 @@
-sharedFromHarmony = 789;
+this.sharedFromHarmony = 789;

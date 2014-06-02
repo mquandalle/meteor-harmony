@@ -1,1 +1,1 @@
-sharedFromJavascript = 321;
+this.sharedFromJavascript = 321;
