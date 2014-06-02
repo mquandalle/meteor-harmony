@@ -2,7 +2,7 @@ var traceur = Npm.require('traceur');
 
 Plugin.registerSourceHandler("next.js", function (compileStep) {
   var oldPath = compileStep.inputPath;
-  var newPath = oldPath.replace(/\.next\.js$/, '.now.js');
+  var newPath = oldPath.replace(/next(?=\.js$)/, 'now');
 
   var source = compileStep.read().toString('utf8');
   var options = {
@@ -25,15 +25,14 @@ Plugin.registerSourceHandler("next.js", function (compileStep) {
       compileStep.error({
         message: errorParts[MESSAGE],
         sourcePath: errorParts[SOURCEPATH],
-        line: parseInt(errorParts[LINE], 10) - 1,
-        column: parseInt(errorParts[COLUMN], 10) + 1
+        line: errorParts[LINE],
+        column: errorParts[COLUMN]
       });
     });
   } else {
     var code = output.js;
     // if traceur injects module.exports, rename it
-    console.log(code.indexOf('module.exports'));
-    if (code.indexOf('module.exports') === 13) {
+    if (code.indexOf('module.exports') === 0) {
       code = code.replace('module.exports', 'harmony');
     }
 
