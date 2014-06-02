@@ -2,7 +2,7 @@ var traceur = Npm.require('traceur');
 
 Plugin.registerSourceHandler("next.js", function (compileStep) {
   var oldPath = compileStep.inputPath;
-  var newPath = oldPath.replace(/\.next\.js$/, '.now.js');
+  var newPath = oldPath.replace(/next(?=\.js$)/, 'now');
 
   var source = compileStep.read().toString('utf8');
   var options = {
