@@ -2,7 +2,7 @@ var path = Npm.require("path");
 
 Package.describe({
   summary: "JavaScript.next-to-JavaScript-of-today compiler",
-  version: "1.0.0-0.0.42"
+  version: "1.0.0+0.0.42"
 });
 
 Package._transitional_registerBuildPlugin({
