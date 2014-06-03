@@ -41,6 +41,8 @@ Plugin.registerSourceHandler("next.js", function (compileStep) {
     var graspTransformations = {
       // If traceur injects `module.exports`, rename it
       // XXX Tests
+      // This manually extends the global `this` with with the return value of
+      // the anonymous function, as well as passing in `this` correctly.
       "module.exports = $a.call(__);": "_.extend(this, ({{a}}).call(this));"
     };
 

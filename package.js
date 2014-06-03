@@ -1,4 +1,4 @@
-var path = Npm.require("path");
+var path = Npm.require('path');
 
 Package.describe({
   summary: "JavaScript.next-to-JavaScript-of-today compiler",
@@ -24,6 +24,9 @@ Package.on_use(function (api) {
   // http://git.io/B2s0Tg
   var dir = ".npm/plugin/compileHarmony/node_modules/traceur/bin/";
   api.add_files(path.join(dir, "traceur-runtime.js"));
+  // The `_.extends` method requires `_` to be exported
+  api.use('underscore');
+  api.export('_');
 });
 
 Package.on_test(function (api) {
