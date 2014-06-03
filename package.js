@@ -7,12 +7,13 @@ Package.describe({
 
 Package._transitional_registerBuildPlugin({
   name: "compileHarmony",
-  use: ['grasp'],
+  use: [],
   sources: [
     "plugin/compile-harmony.js"
   ],
   npmDependencies: {
-    "traceur": "0.0.42"
+    "traceur": "0.0.42",
+    "grasp" : "0.2.1"
   }
 });
 

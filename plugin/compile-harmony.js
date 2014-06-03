@@ -1,4 +1,5 @@
 var traceur = Npm.require('traceur');
+var grasp = Npm.require('grasp');
 
 Plugin.registerSourceHandler("next.js", function (compileStep) {
   var oldPath = compileStep.inputPath;
@@ -34,17 +35,16 @@ Plugin.registerSourceHandler("next.js", function (compileStep) {
     });
   } else {
     var code = output.js;
-
-    var equeryList = [
+    var queryList = [
       [
-        "'module.exports = $a.call(__);'",
-        "--replace",
-        "'_.extend(this, ({{a}}).call(this));'"
+        "equery",
+        "module.exports = $a.call(__);",
+        "_.extend(this, ({{a}}).call(this));"
       ]
     ];
 
-    equeryList.every(function (queryArr) {
-      code = Grasp.equery(queryArr.join(' '), code);
+    queryList.every(function (query) {
+      code = grasp.replace(query[0], query[1], query[2], code)[0];
     });
 
     compileStep.addJavaScript({
