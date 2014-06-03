@@ -35,16 +35,17 @@ Plugin.registerSourceHandler("next.js", function (compileStep) {
     });
   } else {
     var code = output.js;
-    var queryList = [
-      [
-        "equery",
-        "module.exports = $a.call(__);",
-        "_.extend(this, ({{a}}).call(this));"
-      ]
-    ];
 
-    queryList.every(function (query) {
-      code = grasp.replace(query[0], query[1], query[2], code)[0];
+    // XXX Once https://github.com/gkz/grasp/issues/34 is fixed, we will operate
+    // grasp transformations directly on the traceur AST -- more efficent.
+    var graspTransformations = {
+      // If traceur injects `module.exports`, rename it
+      // XXX Tests
+      "module.exports = $a.call(__);": "_.extend(this, ({{a}}).call(this));"
+    };
+
+    _.each(graspTransformations, function (replace, search) {
+      code = grasp.replace("equery", search, replace, code)[0];
     });
 
     compileStep.addJavaScript({

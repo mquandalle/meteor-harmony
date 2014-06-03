@@ -7,13 +7,15 @@ Package.describe({
 
 Package._transitional_registerBuildPlugin({
   name: "compileHarmony",
-  use: [],
+  use: [
+    "underscore"
+  ],
   sources: [
     "plugin/compile-harmony.js"
   ],
   npmDependencies: {
     "traceur": "0.0.42",
-    "grasp" : "0.2.1"
+    "grasp": "0.2.1"
   }
 });
 
@@ -22,6 +24,7 @@ Package.on_use(function (api) {
   // http://git.io/B2s0Tg
   var dir = ".npm/plugin/compileHarmony/node_modules/traceur/bin/";
   api.add_files(path.join(dir, "traceur-runtime.js"));
+  // The `_.extends` method requires `_` to be exported
   api.use('underscore');
   api.export('_');
 });
