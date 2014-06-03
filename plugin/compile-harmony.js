@@ -10,6 +10,9 @@ Plugin.registerSourceHandler("next.js", function (compileStep) {
     sourceMap: true
   };
 
+  // force Traceur to define `this` in function scope
+  source = "this;\n" + source;
+
   var output = traceur.compile(source, options);
 
   if (output.errors.length) {
@@ -31,10 +34,7 @@ Plugin.registerSourceHandler("next.js", function (compileStep) {
     });
   } else {
     var code = output.js;
-    // if traceur injects module.exports, rename it
-    if (code.indexOf('module.exports') === 0) {
-      code = code.replace('module.exports', 'harmony');
-    }
+    code = Grasp.equery("module.exports --replace harmony", code);
 
     compileStep.addJavaScript({
       sourcePath: oldPath,

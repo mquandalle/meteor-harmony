@@ -1,4 +1,4 @@
-var path = Npm.require("path");
+var path = Npm.require('path');
 
 Package.describe({
   summary: "JavaScript.next-to-JavaScript-of-today compiler",
@@ -7,11 +7,13 @@ Package.describe({
 
 Package._transitional_registerBuildPlugin({
   name: "compileHarmony",
-  use: [],
+  use: ['grasp'],
   sources: [
     "plugin/compile-harmony.js"
   ],
-  npmDependencies: {"traceur": "0.0.42"}
+  npmDependencies: {
+    "traceur": "0.0.42"
+  }
 });
 
 Package.on_use(function (api) {
