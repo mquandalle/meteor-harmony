@@ -34,7 +34,18 @@ Plugin.registerSourceHandler("next.js", function (compileStep) {
     });
   } else {
     var code = output.js;
-    code = Grasp.equery("module.exports --replace harmony", code);
+
+    var equeryList = [
+      [
+        "'module.exports = $a.call(__);'",
+        "--replace",
+        "'_.extend(this, ({{a}}).call(this));'"
+      ]
+    ];
+
+    equeryList.every(function (queryArr) {
+      code = Grasp.equery(queryArr.join(' '), code);
+    });
 
     compileStep.addJavaScript({
       sourcePath: oldPath,

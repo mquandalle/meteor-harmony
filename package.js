@@ -21,6 +21,8 @@ Package.on_use(function (api) {
   // http://git.io/B2s0Tg
   var dir = ".npm/plugin/compileHarmony/node_modules/traceur/bin/";
   api.add_files(path.join(dir, "traceur-runtime.js"));
+  api.use('underscore');
+  api.export('_');
 });
 
 Package.on_test(function (api) {
