@@ -4,5 +4,8 @@
   "author": "Maxime QUANDALLE <maxime@quandalle.com>, Christian BUNDY <me@christianbundy.com>",
   "version": "1.0.1+0.0.42",
   "git": "https://github.com/mquandalle/meteor-harmony.git",
-  "homepage": "https://github.com/mquandalle/meteor-harmony"
+  "homepage": "https://github.com/mquandalle/meteor-harmony",
+  "packages": {
+    "exports": {}
+  }
 }
