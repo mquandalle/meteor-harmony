@@ -23,8 +23,7 @@ Package.on_use(function (api) {
   api.add_files(path.join(dir, "traceur-runtime.js"));
 
   // Export `module.exports` and `exports` down the package pipeline
-  api.use('exports');
-  api.export(['module', 'exports']);
+  api.imply('exports');
 });
 
 Package.on_test(function (api) {
