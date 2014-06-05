@@ -2,7 +2,7 @@
   "name": "harmony",
   "description": "Javascript harmony (ES6)",
   "author": "Maxime QUANDALLE <maxime@quandalle.com>, Christian BUNDY <me@christianbundy.com>",
-  "version": "1.0.3+0.0.42",
+  "version": "1.0.4+0.0.42",
   "git": "https://github.com/mquandalle/meteor-harmony.git",
   "homepage": "https://github.com/mquandalle/meteor-harmony",
   "packages": {
