@@ -22,8 +22,9 @@ Package.on_use(function (api) {
   var dir = ".npm/plugin/compileHarmony/node_modules/traceur/bin/";
   api.add_files(path.join(dir, "traceur-runtime.js"));
 
-  // Transpiled code requires `module.exports`
+  // Export `module.exports` and `exports` down the package pipeline
   api.use('exports');
+  api.export(['module', 'exports']);
 });
 
 Package.on_test(function (api) {
