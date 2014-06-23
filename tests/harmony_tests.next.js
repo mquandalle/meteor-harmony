@@ -136,17 +136,12 @@ Tinytest.add('harmony - generators', (test) => {
   test.equal(result, ['a', 'b', 'c', 'd', 'e', 'f', 'g']);
 });
 
-/* Commented out until the Loader API is fixed (ref http://git.io/9P3-ug)
- * Currently this test throws "Unexpected token import"
 Tinytest.add('harmony - modules', (test) => {
-
-  import {firstName, lastName, year} from './harmony_test_setup.next.js';
-
+  // Removed `import` because Meteor automatically imports all files.
   test.equal(firstName, 'David');
   test.equal(lastName, 'Belle');
-  test.equal(year, '1973');
+  test.equal(year, 1973);
 });
-*/
 
 Tinytest.add('harmony - numeric literals', (test) => {
   var binary = [
