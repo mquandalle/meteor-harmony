@@ -2,7 +2,7 @@ var path = Npm.require("path");
 
 Package.describe({
   summary: "JavaScript.next-to-JavaScript-of-today compiler",
-  version: "1.2.1",
+  version: "1.3.44",
   name: "mquandalle:harmony",
   git: "https://github.com/mquandalle/meteor-harmony.git"
 });
