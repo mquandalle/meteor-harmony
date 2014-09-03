@@ -1,4 +1,4 @@
-# Harmony
+# Harmony for Meteor
 
 A thin wrapper around [Traceur](https://github.com/google/traceur-compiler) for [Meteor](https://www.meteor.com/).
 
@@ -6,14 +6,6 @@ A thin wrapper around [Traceur](https://github.com/google/traceur-compiler) for 
 [language features](https://github.com/google/traceur-compiler/wiki/LanguageFeatures) today, helping you say what you mean in your code while informing the standards process."
 >
 > – Traceur README
-
-## Installation
-
-After you've installed [Meteor](https://github.com/meteor/meteor#quick-start) and [Meteorite](https://github.com/oortcloud/meteorite/#installing-meteorite), install Harmony from the command-line.
-
-```sh
-mrt install harmony
-```
 
 ## Usage
 

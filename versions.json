@@ -1,0 +1,24 @@
+{
+  "dependencies": [
+    [
+      "meteor",
+      "1.0.2"
+    ],
+    [
+      "mrt:exports",
+      "1.0.0"
+    ],
+    [
+      "underscore",
+      "1.0.0"
+    ]
+  ],
+  "pluginDependencies": [
+    [
+      "compileHarmony",
+      {}
+    ]
+  ],
+  "toolVersion": "meteor-tool@1.0.26",
+  "format": "1.0"
+}

@@ -2,7 +2,9 @@ var path = Npm.require("path");
 
 Package.describe({
   summary: "JavaScript.next-to-JavaScript-of-today compiler",
-  version: "1.2.1"
+  version: "1.2.1",
+  name: "mquandalle:harmony",
+  git: "https://github.com/mquandalle/meteor-harmony.git"
 });
 
 Package._transitional_registerBuildPlugin({
@@ -16,22 +18,22 @@ Package._transitional_registerBuildPlugin({
   }
 });
 
-Package.on_use(function (api) {
+Package.onUse(function (api) {
   // The location of this runtime file is not supposed to change:
   // http://git.io/B2s0Tg
   var dir = ".npm/plugin/compileHarmony/node_modules/traceur/bin/";
-  api.add_files(path.join(dir, "traceur-runtime.js"));
+  api.addFiles(path.join(dir, "traceur-runtime.js"));
 
   // Export `module.exports` and `exports` down the package pipeline
-  api.imply('exports');
+  api.imply('mrt:exports');
 });
 
-Package.on_test(function (api) {
-  api.use(['harmony', 'tinytest']);
-  api.add_files([
+Package.onTest(function (api) {
+  api.use(['mquandalle:harmony', 'tinytest']);
+  api.addFiles([
     'harmony_test_setup.js',
     'harmony_tests.js',
     'tests/harmony_test_setup.next.js',
     'tests/harmony_tests.next.js'
-  ], ["client", "server"]);
+  ]);
 });
