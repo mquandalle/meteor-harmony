@@ -31,8 +31,8 @@ Package.onUse(function (api) {
 Package.onTest(function (api) {
   api.use(['mquandalle:harmony', 'tinytest']);
   api.addFiles([
-    'harmony_test_setup.js',
-    'harmony_tests.js',
+    'tests/harmony_test_setup.js',
+    'tests/harmony_tests.js',
     'tests/harmony_test_setup.next.js',
     'tests/harmony_tests.next.js'
   ]);
