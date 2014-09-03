@@ -25,7 +25,7 @@ Package.onUse(function (api) {
   api.addFiles(path.join(dir, "traceur-runtime.js"));
 
   // Export `module.exports` and `exports` down the package pipeline
-  api.imply('mrt:exports');
+  api.imply('mrt:exports@1.0.0');
 });
 
 Package.onTest(function (api) {
