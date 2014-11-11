@@ -6,13 +6,6 @@ Tinytest.add('harmony - shared', (test) => {
   test.equal(sharedFromHarmony, 789);
 })
 
-Tinytest.add('harmony - array comprehension', (test) => {
-  var array = [for (x of [0, 1, 2]) for (y of [0, 1, 2]) x + '' + y];
-  test.equal(array, [
-    '00', '01', '02', '10', '11', '12', '20', '21', '22'
-  ]);
-});
-
 Tinytest.add('harmony - arrow functions', (test) => {
   var square = (x) => {
     return x * x;
@@ -88,18 +81,6 @@ Tinytest.add('harmony - iterators and `for of`', (test) => {
   }
   test.equal(res, [1, 4, 9]);
 });
-
-Tinytest.add('harmony - generator comprehension', (test) => {
-  var list = [1, 2, 3, 4];
-  var res = (for (x of list) x);
-
-  var acc = '';
-  for (var x of res) {
-    acc += x;
-  }
-  test.equal(acc, '1234');
-});
-
 
 Tinytest.add('harmony - generators', (test) => {
   // A binary tree class.

@@ -2,19 +2,19 @@ var path = Npm.require("path");
 
 Package.describe({
   summary: "JavaScript.next-to-JavaScript-of-today compiler",
-  version: "0.0.66_1",
+  version: "1.3.74",
   name: "mquandalle:harmony",
   git: "https://github.com/mquandalle/meteor-harmony.git"
 });
 
-Package._transitional_registerBuildPlugin({
+Package.registerBuildPlugin({
   name: "compileHarmony",
   use: [],
   sources: [
     "plugin/compile-harmony.js"
   ],
   npmDependencies: {
-    "traceur": "0.0.66"
+    "traceur": "0.0.74"
   }
 });
 

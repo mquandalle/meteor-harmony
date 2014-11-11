@@ -1,16 +1,16 @@
 {
   "dependencies": {
     "traceur": {
-      "version": "0.0.66",
+      "version": "0.0.74",
       "dependencies": {
         "commander": {
-          "version": "2.3.0"
+          "version": "2.5.0"
         },
         "glob": {
           "version": "4.0.6",
           "dependencies": {
             "graceful-fs": {
-              "version": "3.0.2"
+              "version": "3.0.4"
             },
             "inherits": {
               "version": "2.0.1"
@@ -37,16 +37,13 @@
           }
         },
         "regexpu": {
-          "version": "0.2.1",
+          "version": "0.3.0",
           "dependencies": {
-            "esprima": {
-              "version": "git+https://github.com/mathiasbynens/esprima-es6-regexp.git#f7d718f6cb7f1525f2b8a95f240b19704aea3942"
-            },
             "recast": {
-              "version": "0.7.2",
+              "version": "0.8.8",
               "dependencies": {
                 "esprima-fb": {
-                  "version": "6001.1001.0-dev-harmony-fb"
+                  "version": "7001.1.0-dev-harmony-fb"
                 },
                 "source-map": {
                   "version": "0.1.32",
@@ -62,18 +59,16 @@
                 "cls": {
                   "version": "0.1.5"
                 },
+                "depd": {
+                  "version": "1.0.0"
+                },
                 "ast-types": {
-                  "version": "0.4.11",
-                  "dependencies": {
-                    "depd": {
-                      "version": "1.0.0"
-                    }
-                  }
+                  "version": "0.5.7"
                 }
               }
             },
             "regenerate": {
-              "version": "0.6.4"
+              "version": "1.0.1"
             },
             "regjsgen": {
               "version": "0.2.0"
@@ -93,6 +88,19 @@
         },
         "semver": {
           "version": "2.3.2"
+        },
+        "source-map-support": {
+          "version": "0.2.8",
+          "dependencies": {
+            "source-map": {
+              "version": "0.1.32",
+              "dependencies": {
+                "amdefine": {
+                  "version": "0.1.0"
+                }
+              }
+            }
+          }
         }
       }
     }

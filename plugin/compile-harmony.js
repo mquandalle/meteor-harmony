@@ -9,11 +9,12 @@ Plugin.registerSourceHandler("next.js", function (compileStep) {
   source = "this;\n" + source;
 
   var compiler = new traceur.NodeCompiler({
-    sourceMaps: true
+    sourceMaps: true,
+    modules: 'commonjs'
   });
 
   try {
-    var output = compiler(source, oldPath, newPath);
+    var output = compiler.compile(source, oldPath, newPath);
     compileStep.addJavaScript({
       sourcePath: oldPath,
       path: newPath,
@@ -21,8 +22,9 @@ Plugin.registerSourceHandler("next.js", function (compileStep) {
       sourceMap: compiler.getSourceMap()
     });
   } catch (err) {
+    var list = err.join("\n");
     compileStep.error({
-      message: err.message,
+      message: list,
     });
   }
 });
