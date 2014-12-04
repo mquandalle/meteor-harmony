@@ -1,28 +1,38 @@
 {
   "dependencies": {
     "traceur": {
-      "version": "0.0.74",
+      "version": "0.0.79",
       "dependencies": {
         "commander": {
           "version": "2.5.0"
         },
         "glob": {
-          "version": "4.0.6",
+          "version": "4.3.1",
           "dependencies": {
-            "graceful-fs": {
-              "version": "3.0.4"
+            "inflight": {
+              "version": "1.0.4",
+              "dependencies": {
+                "wrappy": {
+                  "version": "1.0.1"
+                }
+              }
             },
             "inherits": {
               "version": "2.0.1"
             },
             "minimatch": {
-              "version": "1.0.0",
+              "version": "2.0.1",
               "dependencies": {
-                "lru-cache": {
-                  "version": "2.5.0"
-                },
-                "sigmund": {
-                  "version": "1.0.0"
+                "brace-expansion": {
+                  "version": "1.0.1",
+                  "dependencies": {
+                    "balanced-match": {
+                      "version": "0.2.0"
+                    },
+                    "concat-map": {
+                      "version": "0.0.0"
+                    }
+                  }
                 }
               }
             },
@@ -31,53 +41,6 @@
               "dependencies": {
                 "wrappy": {
                   "version": "1.0.1"
-                }
-              }
-            }
-          }
-        },
-        "regexpu": {
-          "version": "0.3.0",
-          "dependencies": {
-            "recast": {
-              "version": "0.8.8",
-              "dependencies": {
-                "esprima-fb": {
-                  "version": "7001.1.0-dev-harmony-fb"
-                },
-                "source-map": {
-                  "version": "0.1.32",
-                  "dependencies": {
-                    "amdefine": {
-                      "version": "0.1.0"
-                    }
-                  }
-                },
-                "private": {
-                  "version": "0.1.5"
-                },
-                "cls": {
-                  "version": "0.1.5"
-                },
-                "depd": {
-                  "version": "1.0.0"
-                },
-                "ast-types": {
-                  "version": "0.5.7"
-                }
-              }
-            },
-            "regenerate": {
-              "version": "1.0.1"
-            },
-            "regjsgen": {
-              "version": "0.2.0"
-            },
-            "regjsparser": {
-              "version": "0.1.2",
-              "dependencies": {
-                "jsesc": {
-                  "version": "0.5.0"
                 }
               }
             }
