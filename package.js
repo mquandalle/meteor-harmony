@@ -14,7 +14,7 @@ Package.registerBuildPlugin({
     "plugin/compile-harmony.js"
   ],
   npmDependencies: {
-    "traceur": "0.0.79"
+    "traceur": "0.0.86"
   }
 });
 

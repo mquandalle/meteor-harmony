@@ -1,13 +1,18 @@
 {
   "dependencies": {
     "traceur": {
-      "version": "0.0.79",
+      "version": "0.0.86",
       "dependencies": {
         "commander": {
-          "version": "2.5.0"
+          "version": "2.7.0",
+          "dependencies": {
+            "graceful-readlink": {
+              "version": "1.0.1"
+            }
+          }
         },
         "glob": {
-          "version": "4.3.1",
+          "version": "4.3.5",
           "dependencies": {
             "inflight": {
               "version": "1.0.4",
@@ -21,16 +26,16 @@
               "version": "2.0.1"
             },
             "minimatch": {
-              "version": "2.0.1",
+              "version": "2.0.3",
               "dependencies": {
                 "brace-expansion": {
-                  "version": "1.0.1",
+                  "version": "1.1.0",
                   "dependencies": {
                     "balanced-match": {
                       "version": "0.2.0"
                     },
                     "concat-map": {
-                      "version": "0.0.0"
+                      "version": "0.0.1"
                     }
                   }
                 }
@@ -47,13 +52,13 @@
           }
         },
         "rsvp": {
-          "version": "3.0.14"
+          "version": "3.0.17"
         },
         "semver": {
           "version": "2.3.2"
         },
         "source-map-support": {
-          "version": "0.2.8",
+          "version": "0.2.9",
           "dependencies": {
             "source-map": {
               "version": "0.1.32",
